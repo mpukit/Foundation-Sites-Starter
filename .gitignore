@@ -1,5 +1,26 @@
+# OS generated files
+####################
 .DS_Store
-bower_components
-node_modules
-npm-debug.log
-css
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# SASS Cache
+#######################
+.sass-cache/
+
+# SASS Maps
+#######################
+css/*.css.map
+
+# Generated CSS output
+#######################
+css/*.css
+
+# Package dependencies
+######################
+node_modules/
+bower_components/
