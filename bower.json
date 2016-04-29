@@ -1,13 +1,10 @@
 {
-  "name": "foundation-sites-template",
+  "name": "foundation-sites-starter",
   "version": "1.0.0",
-  "authors": [
-    "ZURB <foundation@zurb.com>"
-  ],
-  "description": "Basic template for a new Foundation for Sites project.",
+  "description": "Starter for a new Foundation for Sites project",
   "main": "index.html",
   "license": "MIT",
-  "homepage": "http://foundation.zurb.com",
+  "homepage": "",
   "dependencies": {
     "foundation-sites": "~6.1.2",
     "motion-ui": "~1.1.0",
