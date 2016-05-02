@@ -11,4 +11,4 @@ From the command line, run the following commands to install the required depend
     npm install
     bower install
 
-Then run "gulp" on the root of the directory to run the tasks and load the project. It will re-run every time you save a Sass or HTML file.
+Then run "gulp serve" on the root of the directory to run the tasks and load the project. It will re-run every time you save a Sass or HTML file.
