@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
 
@@ -10,6 +11,7 @@ var sassPaths = [
 
 gulp.task('sass', function () {
   return gulp.src('scss/app.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: sassPaths
     })
@@ -20,6 +22,7 @@ gulp.task('sass', function () {
     .pipe(autoprefixer({
       browsers: ['last 2 versions', 'ie >= 9']
     }))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('css'));
 });
 
