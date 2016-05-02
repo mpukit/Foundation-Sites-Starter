@@ -29,9 +29,11 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('./css'));
 });
 
-gulp.task('scripts', function() {
+gulp.task('scripts', function () {
   return gulp.src(['./js/*.js'])
+    .pipe(sourcemaps.init())
     .pipe(concat('production.js'))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./js/dist'));
 });
 
