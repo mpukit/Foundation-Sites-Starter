@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
+// var jslint = require('gulp-jslint'); // To-do
 var browserSync = require('browser-sync').create();
 
 var sassPaths = [
@@ -22,9 +23,17 @@ gulp.task('sass', function () {
     .pipe(autoprefixer({
       browsers: ['last 2 versions', 'ie >= 9']
     }))
+    //.pipe(concat('all.css')) // Placeholder - to-do
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('css'));
 });
+
+// gulp.task('default', function () {
+//     return gulp.src(['source.js'])
+//             .pipe(jslint())
+//             .pipe(jslint.reporter('default', errorsOnly))
+//             .pipe(jslint.reporter('stylish', options));
+// }); // To-do
 
 // Static server
 gulp.task('browser-sync', function() {
