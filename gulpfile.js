@@ -25,7 +25,7 @@ gulp.task('sass', function () {
     }))
     //.pipe(concat('all.css')) // Placeholder - to-do
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./css/*.css'));
+    .pipe(gulp.dest('./css'));
 });
 
 gulp.task('lint', function () {
