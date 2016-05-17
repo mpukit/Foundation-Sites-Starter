@@ -3,6 +3,7 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
+var concatCss = require('gulp-concat-css');
 var jslint = require('gulp-jslint');
 var browserSync = require('browser-sync').create();
 
@@ -25,6 +26,13 @@ gulp.task('sass', function () {
       browsers: ['last 2 versions', 'ie >= 9']
     }))
     .pipe(concat('app.css'))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('./css'));
+});
+
+gulp.task('css', function () {
+  return gulp.src(['css/*.css'])
+    .pipe(concatCss("bundle.css"))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./css'));
 });
@@ -54,7 +62,7 @@ gulp.task('browser-sync', function() {
     });
 });
 
-gulp.task('serve', ['sass', 'lint', 'scripts', 'browser-sync'], function() {
+gulp.task('serve', ['sass', 'css', 'lint', 'scripts', 'browser-sync'], function() {
   gulp.watch(['scss/**/*.scss'], ['sass']);
-  gulp.watch("*.html").on('change', browserSync.reload); // Watch HTML
+  gulp.watch('*.html', 'css/*.css').on('change', browserSync.reload); // Watch HTML/CSS
 });
