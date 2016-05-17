@@ -18,9 +18,7 @@ gulp.task('sass', function () {
     .pipe(sass({
       includePaths: sassPaths
     })
-      .on('error', function (err) {
-        console.log(err.message + ' on line ' + err.lineNumber + ' in file : ' + err.fileName);
-      })
+      .on('error', sass.logError)
     )
     .pipe(autoprefixer({
       browsers: ['last 2 versions', 'ie >= 9']
