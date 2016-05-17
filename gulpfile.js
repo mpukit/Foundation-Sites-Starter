@@ -16,7 +16,8 @@ gulp.task('sass', function () {
   return gulp.src('scss/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
-      includePaths: sassPaths
+      includePaths: sassPaths,
+      outputStyle: 'compressed'
     })
       .on('error', sass.logError)
     )
